@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Giphy API Project</title>
+
+	<!--Bootstrap CDN link-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+	<!--Bootswatch link-->
+	<link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/slate/bootstrap.min.css>
+
+	<!--Reset css file-->
+	<!--<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+
+	<!--External css file-->
+	<!--<link rel="stylesheet" type="text/css" href="assets/css/style.css">-->
+
+	<!--JQuery link-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body class="bg-secondary">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<nav class="navbar navbar-expand-lg navbar-dark bg-dark pb-5 mb-5">
+					  <a class="navbar-brand" href="#">Giphy API Project</a>
+			
+					    <!--<form class="form-inline my-2 my-lg-0">
+					      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+					      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+					    </form>-->
+				</nav>
+			</div>
+		</div>
+
+		<div class="row">
+			<!--Create a placeholder to hold the buttons-->
+			<div class="col-md-8" id="giphy-buttons">
+				<div class="card">
+				  <div class="card-header bg-dark text-white">
+				    Select a giphy
+				  </div>
+				  <div class="card-body">
+				  </div>
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<!--Create a search box and submit button-->
+				<div class="card">
+					<div class="card-header bg-dark text-white">
+						Add your own giphy
+					</div>
+					<div class="card-body">
+						<form class="form-inline my-2 my-lg-0">
+		      				<input class="form-control mr-sm-2 mb-3" type="search" placeholder="Search" aria-label="Search">
+		      				<button class="btn btn-dark my-2 my-sm-0" type="submit">Submit</button>
+		    			</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row pt-4">
+			<div class="col-md-12">
+				<!--Create a section for displaying the giphy search results-->
+				<div class="card">
+				  <div class="card-header bg-dark text-white">
+				    Giphy search results
+				  </div>
+				  <div class="card-body">
+				  </div>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+
+
+</body>
+</html>
