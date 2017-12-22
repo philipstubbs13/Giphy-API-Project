@@ -1,5 +1,5 @@
   //Create an array of strings, each one related to a topic (athletes). Save it to a variable called topics.
-  var topics = ["Lonzo Ball", "Karl Anthony Towns", "Tom Brady", "Grayson Allen", "Klay Thompson", "Michael Jordan" , "Tiger Woods" , "Stephen Curry" ,"Babe Ruth"]
+  var topics = ["Lonzo Ball", "Karl Anthony Towns", "Tom Brady", "Grayson Allen", "Klay Thompson", "Michael Jordan", "Stephen Curry" ,"Babe Ruth"]
   var athleteBtn;
   var athlete;
 
@@ -19,7 +19,7 @@
     //Assign a data attribute to each button.
     athleteBtn.attr("data-name", topics[i]);
     //Add a class of athlete-btn to each button as well as other classes to change the color, padding, and margin of the button.
-    athleteBtn.addClass("btn btn-dark p-3 m-3 athlete-btn");
+    athleteBtn.addClass("btn btn-primary p-3 m-3 athlete-btn");
     //append each button to the athlete-btn-div in the HTML.
     $("#athlete-btn-div").append(athleteBtn);
   }
@@ -28,6 +28,7 @@
 
   //When you click an athelete button...
   //displayAthleteImages function re-renders the HTML to display the appropriate content
+  function displayAthleteImages() {
   $(".athlete-btn").on("click", function() {
     var athlete = $(this).attr("data-name");
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + athlete + "&api_key=dc6zaTOxFJmzC&limit=10";
@@ -60,6 +61,7 @@
         }
       });
   });
+}
 
 
   //When submit button is clicked, add athlete-input from the search box to topics array.
@@ -74,7 +76,11 @@
     createButtons();
   });
 
-  //Calling createButtons() to display initial buttons.
+  //Call createButtons() to display initial buttons.
   createButtons();
+
+//Create click event for all elements with a class of athlete-btn.
+$(document).on("click", ".athlete-btn", displayAthleteImages);
+
 
 
