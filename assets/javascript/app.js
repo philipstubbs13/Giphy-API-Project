@@ -3,9 +3,14 @@
   var athleteBtn;
   var athlete;
 
+  function createButtons() {
   //Take topics in array and create buttons in the HTML.
   //Use a loop that appends a button for each string in the array.
   //Dynamically generate buttons for each athlete in array.
+
+  //Deleting the initial athletes so I don't have duplicate buttons.
+  $("#athlete-btn-div").empty();
+
   for (var i=0; i < topics.length; i++) {
     //Create variable for button.
     var athleteBtn = $("<button>");
@@ -18,6 +23,7 @@
     //append each button to the athlete-btn-div in the HTML.
     $("#athlete-btn-div").append(athleteBtn);
   }
+}
 
 
   //When you click an athelete button...
@@ -54,3 +60,21 @@
         }
       });
   });
+
+
+  //When submit button is clicked, add athlete-input from the search box to topics array.
+  $("#submit-button").on("click", function(event) {
+    event.preventDefault();
+    //Grab the input from the text box.
+    var athleteInput = $("#athlete-input").val();
+    //add or push athleteInput from text box to topics array.
+    topics.push(athleteInput);
+    console.log(topics);
+    //call createButtons, which handles the processing of topics array.
+    createButtons();
+  });
+
+  //Calling createButtons() to display initial buttons.
+  createButtons();
+
+
