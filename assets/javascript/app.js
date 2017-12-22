@@ -1,7 +1,6 @@
   //Create an array of strings, each one related to a topic (athletes). Save it to a variable called topics.
   var topics = ["Lonzo Ball", "Karl Anthony Towns", "Tom Brady", "Grayson Allen", "Klay Thompson", "Michael Jordan", "Stephen Curry" ,"Babe Ruth"]
   var athleteBtn;
-  var athlete;
 
   function createButtons() {
   //Take topics in array and create buttons in the HTML.
@@ -29,7 +28,6 @@
   //When you click an athelete button...
   //displayAthleteImages function re-renders the HTML to display the appropriate content
   function displayAthleteImages() {
-  $(".athlete-btn").on("click", function() {
     var athlete = $(this).attr("data-name");
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + athlete + "&api_key=dc6zaTOxFJmzC&limit=10";
 
@@ -60,7 +58,6 @@
           $("#results-div").prepend(gifDiv);
         }
       });
-  });
 }
 
 
