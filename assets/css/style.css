@@ -1,0 +1,9 @@
+.navbar-brand {
+	display: block;
+	font-size: 30px;
+}
+
+.navbar-brand small {
+	display: block;
+	font-size: 18px;
+}
