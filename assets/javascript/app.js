@@ -1,5 +1,5 @@
   //Create an array of strings, each one related to a topic (athletes). Save it to a variable called topics.
-  var topics = ["Lonzo Ball", "Ricky Rubio", "Jackie Robinson", "Draymond Green", "Klay Thompson", "Aaron Rodgers", "Stephen Curry" ,"Babe Ruth" ,"LaMelo Ball"]
+  var topics = ["lonzo ball", "ricky rubio", "jackie robinson", "draymond green", "klay thompson", "aaron rodgers", "stephen curry" ,"babe ruth" ,"lamelo ball"]
   var athleteBtn;
 
   function createButtons() {
@@ -82,8 +82,8 @@ $(".gif").on("click", function() {
   //When submit button is clicked, add athlete-input from the search box to topics array.
   $("#submit-button").on("click", function(event) {
     event.preventDefault();
-    //Grab the input from the text box.
-    var athleteInput = $("#athlete-input").val();
+    //Grab the input from the text box and change the value to lower case.
+    var athleteInput = $("#athlete-input").val().toLowerCase();
 
     //If the input from the search box is already in the topics array, alert to the user that the athlete is already available.
     if (topics.indexOf(athleteInput) > -1) {
