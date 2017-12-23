@@ -18,7 +18,7 @@
     //Assign a data attribute to each button.
     athleteBtn.attr("data-name", topics[i]);
     //Add a class of athlete-btn to each button as well as other classes to change the color, padding, and margin of the button.
-    athleteBtn.addClass("btn btn-primary p-3 m-3 athlete-btn");
+    athleteBtn.addClass("btn btn-primary p-2 mr-3 mb-2 athlete-btn");
     //append each button to the athlete-btn-div in the HTML.
     $("#athlete-btn-div").append(athleteBtn);
   }
