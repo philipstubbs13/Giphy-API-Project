@@ -1,6 +1,7 @@
   //Create an array of strings, each one related to a topic (athletes). Save it to a variable called topics.
   var topics = ["lonzo ball", "ricky rubio", "jackie robinson", "draymond green", "klay thompson", "aaron rodgers", "stephen curry" ,"babe ruth" ,"lamelo ball"]
   var athleteBtn;
+  var athleteImage;
 
   function createButtons() {
   //Take topics in array and create buttons in the HTML.
@@ -50,7 +51,10 @@
           var p = $("<p>").text("Rating: " + rating);
 
           var athleteImage = $("<img>");
-          athleteImage.attr("src", results[i].images.fixed_height.url);
+          athleteImage.attr("src", results[i].images.fixed_height_still.url);
+          athleteImage.attr("data-still", results[i].images.fixed_height_still.url);
+          athleteImage.attr("data-animate", results[i].images.fixed_height.url);
+          athleteImage.attr("data-state", "still");
           athleteImage.addClass ("img-fluid gif");
 
           gifDiv.prepend(p);
@@ -58,26 +62,25 @@
 
           $("#results-div").prepend(gifDiv);
         }
+
+        $(".gif").on("click", function() {
+          // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
+          var state = $(this).attr("data-state");
+          // If the clicked image's state is still, update its src attribute to what its data-animate value is.
+          // Then, set the image's data-state to animate
+          // Else set src to the data-still value
+          if (state === "still") {
+            $(this).attr("src", $(this).attr("data-animate"));
+            $(this).attr("data-state", "animate");
+          } 
+          else {
+            $(this).attr("src", $(this).attr("data-still"));
+            $(this).attr("data-state", "still");
+          }
+        });
+
       });
 }
-
-$(".gif").on("click", function() {
-  // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
-  var state = $(this).attr("data-state");
-  // If the clicked image's state is still, update its src attribute to what its data-animate value is.
-  // Then, set the image's data-state to animate
-  // Else set src to the data-still value
-  if (state === "still") {
-    $(this).attr("src", $(this).attr("data-animate"));
-    $(this).attr("data-state", "animate");
-  } 
-  else {
-    $(this).attr("src", $(this).attr("data-still"));
-    $(this).attr("data-state", "still");
-  }
-});
-
-
 
   //When submit button is clicked, add athlete-input from the search box to topics array.
   $("#submit-button").on("click", function(event) {
