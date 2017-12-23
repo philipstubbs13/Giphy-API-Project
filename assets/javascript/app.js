@@ -41,6 +41,7 @@
         var results = response.data;
         //Each time an athlete button is clicked and data is retrieved, empty out the results-div.
         $("#results-div").empty();
+        $("#results-div").append("<h4>" + "Click a gif to play. Click again to pause." + "</h4>");
 
         for (var i = 0; i < results.length; i++) {
 
@@ -60,7 +61,7 @@
           gifDiv.prepend(p);
           gifDiv.prepend(athleteImage);
 
-          $("#results-div").prepend(gifDiv);
+          $("#results-div").append(gifDiv);
         }
 
         $(".gif").on("click", function() {
