@@ -1,5 +1,5 @@
   //Create an array of strings, each one related to a topic (athletes). Save it to a variable called topics.
-  var topics = ["Lonzo Ball", "Karl Anthony Towns", "Tom Brady", "Grayson Allen", "Klay Thompson", "Michael Jordan", "Stephen Curry" ,"Babe Ruth"]
+  var topics = ["Lonzo Ball", "Ricky Rubio", "Jackie Robinson", "Draymond Green", "Klay Thompson", "Aaron Rodgers", "Stephen Curry" ,"Babe Ruth" ,"LaMelo Ball"]
   var athleteBtn;
 
   function createButtons() {
@@ -51,6 +51,7 @@
 
           var athleteImage = $("<img>");
           athleteImage.attr("src", results[i].images.fixed_height.url);
+          athleteImage.addClass ("img-fluid gif");
 
           gifDiv.prepend(p);
           gifDiv.prepend(athleteImage);
@@ -59,6 +60,23 @@
         }
       });
 }
+
+$(".gif").on("click", function() {
+  // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
+  var state = $(this).attr("data-state");
+  // If the clicked image's state is still, update its src attribute to what its data-animate value is.
+  // Then, set the image's data-state to animate
+  // Else set src to the data-still value
+  if (state === "still") {
+    $(this).attr("src", $(this).attr("data-animate"));
+    $(this).attr("data-state", "animate");
+  } 
+  else {
+    $(this).attr("src", $(this).attr("data-still"));
+    $(this).attr("data-state", "still");
+  }
+});
+
 
 
   //When submit button is clicked, add athlete-input from the search box to topics array.
@@ -70,6 +88,11 @@
     //If the input from the search box is already in the topics array, alert to the user that the athlete is already available.
     if (topics.indexOf(athleteInput) > -1) {
       alert(athleteInput + " is already available.");
+    }
+
+    //If text box is empty, don't create button. Nothing should happen when user clicks Add icon.
+    else if (athleteInput == "") {
+      return;
     }
 
     //else if the input from the search box is not in the topics array, add athlete to topics array and create button for athlete.
