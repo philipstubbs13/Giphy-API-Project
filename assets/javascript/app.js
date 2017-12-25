@@ -1,5 +1,5 @@
   //Create an array of strings, each one related to a topic (athletes). Save it to a variable called topics.
-  var topics = ["lonzo ball", "ricky rubio", "jackie robinson", "draymond green", "klay thompson", "aaron rodgers", "stephen curry" ,"babe ruth" ,"lamelo ball"]
+  var topics = ["lonzo ball", "ricky rubio", "jackie robinson", "draymond green", "klay thompson", "aaron rodgers", "stephen curry" ,"babe ruth" ,"lamelo ball" , "shaquille o'neal" , "giannis antetokounmpo"]
   var athleteBtn;
   var athleteImage;
 
