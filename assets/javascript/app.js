@@ -20,7 +20,7 @@
     athleteBtn.attr("data-name", topics[i]);
     //Add a class of athlete-btn to each button as well as other classes to change the color, padding, and margin of the button.
     athleteBtn.addClass("btn btn-primary p-2 mr-3 mb-2 athlete-btn");
-    //append each button to the athlete-btn-div in the HTML.
+    //Append each button to the athlete-btn-div in the HTML.
     $("#athlete-btn-div").append(athleteBtn);
   }
 }
@@ -30,17 +30,21 @@
   //displayAthleteImages function re-renders the HTML to display the appropriate content
   function displayAthleteImages() {
     var athlete = $(this).attr("data-name");
+    //Construct our query URL to access and obtain data from the giphy API.
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + athlete + "&api_key=dc6zaTOxFJmzC&limit=10";
 
+    //Our jQuery ajax method.
     $.ajax({
         url: queryURL,
         method: "GET"
       })
       .done(function(response) {
+        //debugger
         console.log(response);
         var results = response.data;
         //Each time an athlete button is clicked and data is retrieved, empty out the results-div.
         $("#results-div").empty();
+        //Display text to the user about how to play and pause a gif in the gif search results section.
         $("#results-div").append("<h4>" + "Click a gif to play. Click again to pause." + "</h4>");
 
         for (var i = 0; i < results.length; i++) {
@@ -49,6 +53,7 @@
 
           var rating = results[i].rating;
 
+          //Display rating of gif.
           var p = $("<p>").text("Rating: " + rating);
 
           var athleteImage = $("<img>");
