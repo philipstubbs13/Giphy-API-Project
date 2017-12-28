@@ -51,28 +51,32 @@
 
         for (var i = 0; i < results.length; i++) {
 
-          //Create div element to hold gif image.. 
-          var gifDiv = $("<div class='item'>");
+          // Only take action if the gif has an appropriate rating
+          if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
 
-          //Save results[i].rating property. Store in rating variable.
-          var rating = results[i].rating;
+            //Create div element to hold gif image.. 
+            var gifDiv = $("<div class='item'>");
 
-          //Display rating of gif.
-          var p = $("<p>").text("Rating: " + rating);
+            //Save results[i].rating property. Store in rating variable.
+            var rating = results[i].rating;
 
-          var athleteImage = $("<img>");
-          athleteImage.attr("src", results[i].images.fixed_height_still.url);
-          athleteImage.attr("data-still", results[i].images.fixed_height_still.url);
-          athleteImage.attr("data-animate", results[i].images.fixed_height.url);
-          athleteImage.attr("data-state", "still");
-          athleteImage.addClass ("img-fluid gif");
+            //Display rating of gif.
+            var p = $("<p>").text("Rating: " + rating);
 
-          //Prepend rating paragraph to the div created to hold the gif image.
-          gifDiv.prepend(p);
-          //Prepend gif image to the div created to hold the gif image.
-          gifDiv.prepend(athleteImage);
+            var athleteImage = $("<img>");
+            athleteImage.attr("src", results[i].images.fixed_height_still.url);
+            athleteImage.attr("data-still", results[i].images.fixed_height_still.url);
+            athleteImage.attr("data-animate", results[i].images.fixed_height.url);
+            athleteImage.attr("data-state", "still");
+            athleteImage.addClass ("img-fluid gif");
 
-          $("#results-div").append(gifDiv);
+            //Prepend rating paragraph to the div created to hold the gif image.
+            gifDiv.prepend(p);
+            //Prepend gif image to the div created to hold the gif image.
+            gifDiv.prepend(athleteImage);
+
+            $("#results-div").append(gifDiv);
+          }
         }
 
         $(".gif").on("click", function() {
@@ -98,7 +102,7 @@
   $("#submit-button").on("click", function(event) {
 
     //The following code prevents the submit button from trying to submit the form.
-.    //Using a form so that the user can press Enter to search instead of clicking the button.
+    //Using a form so that the user can press Enter to search instead of clicking the button.
     event.preventDefault();
     //Grab the input from the text box and change the value to lower case.
     var athleteInput = $("#athlete-input").val().toLowerCase();
