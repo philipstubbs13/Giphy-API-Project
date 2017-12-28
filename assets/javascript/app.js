@@ -33,11 +33,13 @@
     //Construct our query URL to access and obtain data from the giphy API.
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + athlete + "&api_key=dc6zaTOxFJmzC&limit=10";
 
-    //Our jQuery ajax method.
+    //Our jQuery AJAX method. Perform AJAX GET request to the queryURL to get data from giphy API.
     $.ajax({
         url: queryURL,
         method: "GET"
       })
+
+      //After the data from the AJAX request comes back.
       .done(function(response) {
         //debugger
         console.log(response);
@@ -49,8 +51,10 @@
 
         for (var i = 0; i < results.length; i++) {
 
+          //Create div element to hold gif image.. 
           var gifDiv = $("<div class='item'>");
 
+          //Save results[i].rating property. Store in rating variable.
           var rating = results[i].rating;
 
           //Display rating of gif.
@@ -63,7 +67,9 @@
           athleteImage.attr("data-state", "still");
           athleteImage.addClass ("img-fluid gif");
 
+          //Prepend rating paragraph to the div created to hold the gif image.
           gifDiv.prepend(p);
+          //Prepend gif image to the div created to hold the gif image.
           gifDiv.prepend(athleteImage);
 
           $("#results-div").append(gifDiv);
@@ -90,6 +96,9 @@
 
   //When submit button is clicked, add athlete-input from the search box to topics array.
   $("#submit-button").on("click", function(event) {
+
+    //The following code prevents the submit button from trying to submit the form.
+.    //Using a form so that the user can press Enter to search instead of clicking the button.
     event.preventDefault();
     //Grab the input from the text box and change the value to lower case.
     var athleteInput = $("#athlete-input").val().toLowerCase();
