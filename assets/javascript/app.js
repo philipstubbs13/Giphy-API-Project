@@ -29,6 +29,12 @@
   //When you click an athelete button...
   //displayAthleteImages function re-renders the HTML to display the appropriate content
   function displayAthleteImages() {
+    //Each time an athlete button is clicked and data is retrieved, empty out the columns in the results-div.
+    $("#results-div-col1").empty();
+    $("#results-div-col2").empty();
+    $("#results-div-col3").empty();
+    $("#click-to-play-text").empty();
+
     var athlete = $(this).attr("data-name");
     //Construct our query URL to access and obtain data from the giphy API.
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + athlete + "&api_key=dc6zaTOxFJmzC&limit=10";
@@ -44,10 +50,8 @@
         //debugger
         console.log(response);
         var results = response.data;
-        //Each time an athlete button is clicked and data is retrieved, empty out the results-div.
-        $("#results-div").empty();
         //Display text to the user about how to play and pause a gif in the gif search results section.
-        $("#results-div").append("<h4>" + "Click a gif to play. Click again to pause." + "</h4>");
+        $("#click-to-play-text").append("<h4>" + "Click a gif to play. Click again to pause." + "</h4>");
 
         for (var i = 0; i < results.length; i++) {
 
@@ -63,6 +67,7 @@
             //Display rating of gif.
             var p = $("<p>").text("Rating: " + rating);
 
+            //Need to give each gif/image some attributes so that the user can play and pause a gif on demand.
             var athleteImage = $("<img>");
             athleteImage.attr("src", results[i].images.fixed_height_still.url);
             athleteImage.attr("data-still", results[i].images.fixed_height_still.url);
@@ -75,8 +80,23 @@
             //Prepend gif image to the div created to hold the gif image.
             gifDiv.prepend(athleteImage);
 
-            $("#results-div").append(gifDiv);
+            //Add the first three gifs retrieved from the giphy API call to the results-div-col1 column in the HTML.
+            if (i >= 0 && i < 3) {
+              $("#results-div-col1").append(gifDiv);
+            }
+
+            //Add the next four gifs retrieved from the giphy API call to the results-div-col2 column in the HTML.
+            else if (i >= 3 && i < 7) {
+              $("#results-div-col2").append(gifDiv);
+            }
+
+            //Finally, add the last three gifs retrieved from the giphy API call to the results-div-col3 column in the HTML.
+            else {
+              $("#results-div-col3").append(gifDiv);
+            }
           }
+
+
         }
 
         $(".gif").on("click", function() {
@@ -132,6 +152,43 @@
 
 //Create click event for all elements with a class of athlete-btn.
 $(document).on("click", ".athlete-btn", displayAthleteImages);
+
+function displayHeaderImage () {
+    var queryURL = "https://api.giphy.com/v1/stickers/search?q=basketball&api_key=dc6zaTOxFJmzC";
+    
+  //Our jQuery AJAX method. Perform AJAX GET request to the queryURL to get data from giphy API.
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+      })
+
+      //After the data from the AJAX request comes back.
+      .done(function(response) {
+        console.log(response);
+        var results = response.data
+
+        //Create div element to hold gif image.. 
+        var gifDiv = $("<div class='item'>");
+
+        //Save response.data[5].fixed_width.url property. Store in headerImageUrl variable.
+        var headerImageUrl = results[4].images.fixed_height.url;
+
+        var headerImage = $("<img>");
+        headerImage.attr("id", "spinning-ball");
+        headerImage.attr("src", headerImageUrl);
+        headerImage.addClass ("img-fluid gif");
+
+        //Prepend gif image to the div created to hold the gif image.
+        gifDiv.append(headerImage);
+
+        $("#main-header").append(gifDiv);
+      });
+
+}
+
+displayHeaderImage();
+
+
 
 
 
