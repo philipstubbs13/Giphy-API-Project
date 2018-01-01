@@ -5,6 +5,8 @@
 
 ## Screenshot
 <img src="assets/images/giffinder.PNG" alt="Athlete gif finder site" width="400px" height="320px">
+<img src="assets/images/giffinder4.PNG" alt="Athlete gif finder select an athlete section" width="400px" height="320px">
+<img src="assets/images/giffinder3.png" alt="Athlete gif finder user input section" width="400px" height="320px">
 <img src="assets/images/giffinder2.png" alt="Athlete gif finder search results section" width="400px" height="450px">
 
 ## Technologies used to create site
