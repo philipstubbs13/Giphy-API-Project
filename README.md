@@ -10,6 +10,7 @@
 <li>Bootstrap 4.0.0-beta</li>
 <li>Javascript</li>
 <li>JQuery</li>
+<li>AJAX</li>
 <li>Giphy API</li>
 
 ## How to use the Giphy API
