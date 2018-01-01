@@ -1,7 +1,7 @@
 # Giphy-API-Project
 
-##Live
-https://philipstubbs13.github.io/Giphy-API-Project/index.html
+## Live
+<p>https://philipstubbs13.github.io/Giphy-API-Project/index.html</p>
 
 ## Technologies used to create site
 
