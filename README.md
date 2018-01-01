@@ -1,5 +1,8 @@
 # Giphy-API-Project
 
+##Live
+https://philipstubbs13.github.io/Giphy-API-Project/index.html
+
 ## Technologies used to create site
 
 <li>HTML5</li>
@@ -27,7 +30,8 @@
 	<li>In the <b>Add your favorite athlete</b> section, enter the first <b>and</b> last name of the athlete you want to add. For example, Kobe Bryant.</li>
 	<li>Click the + icon.</li>
 		<info>A button is created for the athlete you entered and added to the <b>Select an athlete</b> section.</info>
-	</li>Click the button for your athlete</li>
+	</li>
+	</li>Click the button for your athlete.</li>
 	<li>When you click a button, 10 static, non-animated gif images related to the athlete you chose are retrieved from the Giphy API and placed in the <b>Gif search results</b> section.</li>
 </ol>
 
