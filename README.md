@@ -5,6 +5,7 @@
 
 ## Screenshot
 <img src="assets/images/giffinder.PNG" alt="Athlete gif finder site" width="400px" height="320px">
+<img src="assets/images/giffinder2.png" alt="Athlete gif finder search results section" width="400px" height="450px">
 
 ## Technologies used to create site
 
@@ -44,6 +45,12 @@
 
 ### Gif rating
 <info>The gif rating (for example, G or PG) is displayed under each gif. This data is retrieved from the Giphy API.</info>
+
+## Future feature enhancements
+<ul>
+	<li>Right now, the <b>Add your favorite athlete</b> section has one user input box to enter both first name and last name. I wonder if it would be better to have two user input boxes. One input box to enter first name. Another input box to enter last name.</li>
+	<li>Use different font</li>
+</ul>
 
 ## Feedback
 <p>Feel free to send feedback via <a href="https://twitter.com/iamPhilStubbs" target="_blank">Twitter</a>, email (philipstubbs13@gmail.com), or <a href="https://github.com/philipstubbs13/Giphy-API-Project/issues/" target="_blank">file an issue</a>. Feature requests are always welcome. If you wish to contribute, please send an email with your request to philipstubbs13@gmail.com to discuss.</p>
