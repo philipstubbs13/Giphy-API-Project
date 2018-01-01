@@ -3,6 +3,9 @@
 ## Live
 <p>https://philipstubbs13.github.io/Giphy-API-Project/index.html</p>
 
+## Screenshot
+<img src="assets/images/giffinder.PNG" alt="Athlete gif finder site" width="250px" height="320px">
+
 ## Technologies used to create site
 
 <li>HTML5</li>
