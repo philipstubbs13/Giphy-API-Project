@@ -174,7 +174,7 @@ function displayHeaderImage () {
         var gifDiv = $("<div class='item'>");
 
         //Save response.data[5].fixed_width.url property. Store in headerImageUrl variable.
-        var headerImageUrl = results[4].images.fixed_height.url;
+        var headerImageUrl = results[3].images.fixed_height.url;
 
         var headerImage = $("<img>");
         headerImage.attr("id", "spinning-ball");
@@ -184,7 +184,7 @@ function displayHeaderImage () {
         //Prepend gif image to the div created to hold the gif image.
         gifDiv.append(headerImage);
 
-        $("#main-header").append(gifDiv);
+        $("#main-header-image").append(gifDiv).addClass("mt-2");
       });
 
 }
