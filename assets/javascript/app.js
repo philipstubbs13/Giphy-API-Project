@@ -127,6 +127,9 @@
     //Grab the input from the text box and change the value to lower case.
     var athleteInput = $("#athlete-input").val().toLowerCase();
 
+    //Remove the athlete's name from text box after user clicks add/submit-button.
+    $("#athlete-input").val("");
+
     //If the input from the search box is already in the topics array, alert to the user that the athlete is already available.
     if (topics.indexOf(athleteInput) > -1) {
       alert(athleteInput + " is already available.");
