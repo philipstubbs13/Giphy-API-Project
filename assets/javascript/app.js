@@ -1,5 +1,5 @@
   //Create an array of strings, each one related to a topic (athletes). Save it to a variable called topics.
-  var topics = ["lonzo ball", "ricky rubio", "jackie robinson", "draymond green", "klay thompson", "aaron rodgers", "stephen curry" ,"babe ruth" ,"lamelo ball" , "shaquille o'neal" , "giannis antetokounmpo"]
+  var topics = ["lonzo ball", "ricky rubio", "jackie robinson", "draymond green", "javale mcgee", "jimmy garoppolo", "stephen curry" ,"babe ruth" ,"lamelo ball" , "shaquille o'neal" , "giannis antetokounmpo"]
   var athleteBtn;
   var athleteImage;
 
@@ -73,7 +73,7 @@
             athleteImage.attr("data-still", results[i].images.fixed_height_still.url);
             athleteImage.attr("data-animate", results[i].images.fixed_height.url);
             athleteImage.attr("data-state", "still");
-            athleteImage.addClass ("img-fluid gif");
+            athleteImage.addClass ("img-fluid gif border border-primary");
 
             //Prepend rating paragraph to the div created to hold the gif image.
             gifDiv.prepend(p);
