@@ -8,7 +8,8 @@
 <p>https://philipstubbs13.github.io/Giphy-API-Project/index.html</p>
 
 ## Screenshots
-<img src="assets/images/giffinder.PNG" alt="Athlete gif finder site" width="400px" height="320px">
+<img src="assets/images/giffinder-header.png" alt="Athlete gif finder site">
+<img src="assets/images/giffinder-athlete-buttons.png" alt="athlete gif buttons">
 <img src="assets/images/giffinder4.png" alt="Athlete gif finder select an athlete section" width="550px" height="320px">
 <img src="assets/images/giffinder3.png" alt="Athlete gif finder user input section" width="550px" height="320px">
 <img src="assets/images/giffinder2.png" alt="Athlete gif finder search results section" width="400px" height="450px">
